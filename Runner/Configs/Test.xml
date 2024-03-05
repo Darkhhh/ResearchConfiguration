@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Root>
+    <Environment Experiments="5000" Threads="4"/>
+    
+    <Nodes Number="24" ConnectionRange="14" ObserveRange="24,4"/>
+    
+    <Area Size="100" Type="Rectangle"/>
+    
+    <ObservableObjects InitiallyActive="True" Number="300;400;500;700"/>
+</Root>
