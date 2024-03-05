@@ -7,4 +7,6 @@
     <Area Size="100" Type="Rectangle"/>
     
     <ObservableObjects InitiallyActive="True" Number="300;400;500;700"/>
+
+    <MaxStateTime>200</MaxStateTime>
 </Root>
