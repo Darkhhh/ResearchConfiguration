@@ -3,6 +3,12 @@
 ###############################################################################
 * text=auto
 
+.git* export-ignore
+*.sln export-ignore
+*.csproj export-ignore
+ResearchConfiguration.Runner/** export-ignore
+ResearchConfiguration.Runner export-ignore
+
 ###############################################################################
 # Set default behavior for command prompt diff.
 #
