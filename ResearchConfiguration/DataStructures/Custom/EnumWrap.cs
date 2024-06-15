@@ -4,7 +4,9 @@ public struct EnumWrap<T>(T value) : IXmlConvertible where T : struct, Enum
 {
     public T Value { get; set; } = value;
 
-    public static object FromString(string input) => GetEnum<T>(input);
+    public override string ToString() => Value.ToString();
+
+    public static object FromString(string input) => new EnumWrap<T>(GetEnum<T>(input));
     
     private static TEnum GetEnum<TEnum>(string value) where TEnum : struct, Enum
     {
