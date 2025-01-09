@@ -24,7 +24,8 @@ public class Injector(Reader reader)
         foreach (var propertyInfo in typeof(T).GetProperties(BindingFlags.Public | BindingFlags.NonPublic |
                                                              BindingFlags.Instance))
         {
-            if (!propertyInfo.PropertyType.IsAssignableTo(typeof(IXmlConvertible))) continue;
+            if (!propertyInfo.PropertyType.IsAssignableTo(typeof(IXmlConvertible)) &&
+                !propertyInfo.PropertyType.IsAssignableTo(typeof(string))) continue;
             if (!propertyInfo.HasAttribute<NodeNameAttribute>(out var nodeName)) continue;
 
             var value = propertyInfo.HasAttribute<AttributeNameAttribute>(out var attrName) ? 
@@ -48,6 +49,7 @@ public class Injector(Reader reader)
             (typeof(FloatWrap), FloatWrap.FromString), 
             (typeof(BoolWrap), BoolWrap.FromString), 
             (typeof(LongWrap), LongWrap.FromString),
+            (typeof(string), x => x),
         };
 
         return list;
