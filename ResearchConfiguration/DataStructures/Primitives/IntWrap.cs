@@ -7,4 +7,6 @@ public struct IntWrap(int value) : IXmlConvertible
     public static object FromString(string input) => new IntWrap(Convert.ToInt32(input));
     
     public override string ToString() => Value.ToString();
+
+    public static implicit operator int(IntWrap value) => value.Value;
 }

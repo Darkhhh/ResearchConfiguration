@@ -7,4 +7,6 @@ public struct LongWrap(long value) : IXmlConvertible
     public static object FromString(string input) => new LongWrap(Convert.ToInt64(input));
     
     public override string ToString() => Value.ToString();
+
+    public static implicit operator long(LongWrap value) => value.Value;
 }

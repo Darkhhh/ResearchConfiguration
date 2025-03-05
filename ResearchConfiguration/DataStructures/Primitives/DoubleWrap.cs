@@ -9,4 +9,6 @@ public struct DoubleWrap(double value) : IXmlConvertible
     public static object FromString(string input) => new DoubleWrap(Convert.ToDouble(input));
     
     public override string ToString() => Value.ToString(CultureInfo.InvariantCulture);
+
+    public static implicit operator double(DoubleWrap value) => value.Value;
 }

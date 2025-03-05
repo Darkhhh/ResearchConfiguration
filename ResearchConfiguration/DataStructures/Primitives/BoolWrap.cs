@@ -7,4 +7,6 @@ public struct BoolWrap(bool value) : IXmlConvertible
     public static object FromString(string input) => new BoolWrap(Convert.ToBoolean(input));
 
     public override string ToString() => Value.ToString();
+
+    public static implicit operator bool(BoolWrap value) => value.Value;
 }
